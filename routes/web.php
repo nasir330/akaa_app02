@@ -8,7 +8,7 @@ use App\Http\Controllers\AppController;
 Route::get('/',[AppController::class, 'index']);
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
