@@ -1,7 +1,74 @@
-.main-body{
+.main-body {
     background: url('../img/main_bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.login-form {
+    border: 2px solid black;
+    border-radius: 10px 10px 10px 10px;
+    margin: 10% auto;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.logo {
+    width: 50%;
+    margin: 0% auto;
+}
+
+.input-group>span,
+.form-control {
+    color: #fff;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.input-group .icon {
+    color: #fff;
+    font-size: 24px;
+}
+
+.btn {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.btn:hover {
+    color: white;
+    scale: 1.02;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+.lockscreen-item {
+    border-radius: 4px;    
+    margin: 10px auto 30px;
+    padding: 0;
+    position: relative;
+    width: 290px
+}
+
+.lockscreen-image {
+    border-radius: 50%;
+    background-color: black;
+    border:2px solid gray;
+    left: -10px;
+    padding: 5px;
+    position: absolute;
+    top: -25px;
+    z-index: 10
+}
+
+.lockscreen-image>img {  
+    border-radius: 50%;
+    height: 70px;
+    width: 70px
+}
+ 
+/* Mobile device */
+@media (max-width:600px) {
+
+    .login-form {
+        margin: 50% auto;
+    }
 }

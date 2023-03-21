@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -12,6 +13,18 @@ use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
+     //authchecker function
+     public function authChceker(Request $request)
+     {
+         $data = User::where('email',$request->email)->first();
+         if($data){
+             return redirect()->route('login')->with('data', $data);
+         }else{
+             session()->flash('error', 'Email not matched ..!!');
+         return redirect()->back();
+         }
+         
+     }
     /**
      * Display the login view.
      */

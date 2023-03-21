@@ -1,47 +1,60 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+<x-header />
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<body class="main-body p-4">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4 p-4 login-form">
+            <div class="logo mb-3 pb-4">
+                <img class="img-fluid" src="{{asset('Assets/img/logo.png')}}" alt="User Image">
+                @if(session()->has('error'))
+                <div class="errorMsg text-center text-danger p-1">
+                    {{session('error')}}
+                </div>
+                @endif
+                <x-input-error :messages="$errors->get('email')" style="list-style:none;"
+                    class="text-danger text-center" />
+                <x-input-error :messages="$errors->get('password')" style="list-style:none;"
+                    class="text-danger text-center" />
+            </div>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
+            @if(session()->has('data'))
+            <div class="lockscreen-item">
+                <div class="lockscreen-image">
+                    <img style="color:#fff; width:70px;height:70px;" src="{{asset('')}}{{session('data.photo')}}"
+                        alt="User Image">
+                </div>
+                <form class="lockscreen-credentials" action="{{route('login')}}" method="post">
+                    @csrf
+                    <div class="input-group">
+                        <input type="hidden" name="email" class="form-control" value="{{session('data.email')}}">
+                        <input style="text-align:center; margin-left:20px;" type="password" name="password"
+                            class="form-control" placeholder="Enter Password">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn">
+                                <i class="fas fa-arrow-right text-muted"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            @else
+            <div class="lockscreen-item">
+                <div class="lockscreen-image">                   
+                <img class="img-fluid" src="{{asset('Assets/img/email.png')}}" alt="User Image">
+                </div>
+                <form class="lockscreen-credentials" action="{{route('authChecker')}}" method="post">
+                    @csrf
+                    <div class="input-group">
+                        <input style="text-align:right; margin-left:20px;" type="email" name="email"
+                            class="form-control" placeholder="Enter email address">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn">
+                                <i class="fas fa-arrow-right text-muted"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
             @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
         </div>
-    </form>
-</x-guest-layout>
+    </div>
+    <x-footer />

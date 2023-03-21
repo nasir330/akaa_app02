@@ -9,7 +9,7 @@ class AppController extends Controller
 {
     public function index()
     {
-        $appData = User::all();
+        $appData = User::first();
         //return $appData;
         return view('main',['appData' => $appData]);
     }
