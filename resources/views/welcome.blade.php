@@ -17,14 +17,6 @@
         @include('includes.menu.right_sidebar')
         <!-- theme menu rightsidebar end -->
 
-        <!-- theme option rightsidebar start    -->
-        @include('includes.menu.theme_option_rightsidebar')
-        <!-- theme option rightsidebar end    -->
-
-        <!-- theme user-menu start -->
-        @include('includes.menu.theme_user_menu')       
-        <!-- theme user-menu end -->
-
         <!-- App Left-side-menu start -->
         @include('includes.menu.app_menu')
         <!-- App Left-side-menu end -->
@@ -40,9 +32,8 @@
                     <div class="row clearfix">
                         <div class="col-lg-12">
                             <div class="mb-4">
-                                <h4>Welcome Peter Richards!</h4>
-                                <small>Measure How Fast You’re Growing Monthly Recurring Revenue. <a href="#">Learn
-                                        More</a></small>
+                                <h4>Welcome {{Auth::user()->email}}!</h4>
+                                <small>Akaa Plumbing and Heating App version 2.0</small>
                             </div>
                         </div>
                     </div>
@@ -52,9 +43,7 @@
                     <!-- box menu end -->
                     <!-- sales overview start -->
                     <div class="row clearfix row-deck">
-                        <!-- line chart start -->
-                         @include('templates.sales_overview.line_chart')                       
-                        <!-- line chart end -->
+                       
                         <!-- current overview start -->
                         @include('templates.sales_overview.current_overview') 
                         <!-- current overview end -->
@@ -77,12 +66,7 @@
                         <!-- customers rating end -->
                     </div>
                     <!-- project statistics end -->
-
-                     <!-- project Summary start -->
-                     <div class="row clearfix">
-                     @include('templates.project_summary.index')
-                    </div>
-                    <!-- project Summary end -->
+                    
                 </div>
             </div>
            
