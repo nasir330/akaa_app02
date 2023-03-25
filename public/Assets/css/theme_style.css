@@ -1,3 +1,6 @@
+a{
+    text-decoration:none;
+}
 .main-body {
     background: url('../img/main_bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -70,6 +73,15 @@
     top: -10%;
     width: 100%;
     height: 100%;
+}
+#boxitem .card-header{    
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+}
+#boxitem .card-header h3{    
+   color:#fff;
+}
+#boxitem .card-body{    
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
 }
  
 /* Mobile device */

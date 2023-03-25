@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{route('customers')}}">
                     <i class="fas fa-users"></i>
                     <span>Customers</span>
                 </a>
@@ -28,43 +28,43 @@
 
             <li class="g_heading">Services</li>
             <li>
-                <a href="project-taskboard.html">
+                <a href="{{route('quotations')}}">
                     <i class="fas fa-quote-left"></i>
                     <span>Quotations</span>
                 </a>
             </li>
             <li>
-                <a href="project-ticket.html">
+            <a href="{{route('invoices')}}">
                     <i class="fas fa-file-invoice-dollar"></i>
                     <span>Invoices</span>
                 </a>
             </li>
             <li>
-                <a href="project-ticket-details.html">
+            <a href="{{route('certificates')}}">
                     <i class="fas fa-certificate"></i>
                     <span>Certificates</span>
                 </a>
             </li>
             <li>
-                <a href="project-ticket-details.html">
+            <a href="{{route('maintenance')}}">
                 <i class="fa-brands fa-servicestack"></i>
                     <span>Maintenance/Service</span>
                 </a>
             </li>
             <li>
-                <a href="project-ticket-details.html">
+            <a href="{{route('boiler.service')}}">
                     <i class="fas fa-tools"></i>
                     <span>Boiler Service</span>
                 </a>
             </li>
             <li>
-                <a href="project-ticket-details.html">              
+            <a href="{{route('letterheads')}}">             
                     <i class="fa fa-envelope-open-text"></i>
                     <span>Letterhead</span>
                 </a>
             </li>
             <li>
-                <a href="project-ticket-details.html">
+            <a href="{{route('statements')}}">
                     <i class="fa fa-file"></i>
                     <span>Statement</span>
                 </a>
