@@ -33,11 +33,11 @@ a{
     font-size: 24px;
 }
 
-.btn {
+.login-form .btn {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
-.btn:hover {
+.login-form .btn:hover {
     color: white;
     scale: 1.02;
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
